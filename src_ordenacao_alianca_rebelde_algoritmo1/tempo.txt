@@ -1,0 +1,11 @@
+Tempo dos ultimos programas
+0.000000 sec 
+0.000000 sec 
+0.000000 sec 
+0.000000 sec 
+0.000000 sec 
+0.051000 sec 
+0.126000 sec 
+0.255000 sec 
+0.605000 sec 
+1.149000 sec 
