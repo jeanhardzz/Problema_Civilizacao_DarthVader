@@ -22,7 +22,6 @@ void SistemaDarkSide::ImprimeCivilizacoes(){
 
 void SistemaDarkSide::Ordena(){
   RecursivoDistancia(0,num_civilizacoes-1);  
-  //RecursivoPopulacao(0,num_civilizacoes-1);
 }
 
 void SistemaDarkSide::RecursivoDistancia(int esq,int dir){
@@ -85,34 +84,4 @@ void SistemaDarkSide::ParticaoDistancia(int esq,int dir, int *i,int *j){
     while (*i <= *j);
 }
 
-void SistemaDarkSide::RecursivoPopulacao(int esq,int dir){
-    int i, j;
-    ParticaoPopulacao(esq,dir,&i,&j);
-    if(esq<j){
-        RecursivoPopulacao(esq,j);
-    }
-    if(i<dir){
-        RecursivoPopulacao(i,dir);
-    }
-}
-
-void SistemaDarkSide::ParticaoPopulacao(int esq,int dir, int *i,int *j){
-    Civilizacao x, w;
-    *i = esq; *j = dir;
-    x = civilizacoes[(*i + *j)/2]; /* obtem o pivo x */        
-    do{
-        while (x.GetPopulacao() < civilizacoes[*i].GetPopulacao()) (*i)++;
-        while (x.GetPopulacao() > civilizacoes[*j].GetPopulacao()) (*j)--;
-        if (*i <= *j){
-            if(civilizacoes[*i].GetDistancia() == civilizacoes[*j].GetDistancia()){
-              w = civilizacoes[*i];
-              civilizacoes[*i] = civilizacoes[*j];
-              civilizacoes[*j] = w;
-            }            
-            (*i)++;
-            (*j)--;
-        }
-    }
-    while (*i <= *j);
-}
 

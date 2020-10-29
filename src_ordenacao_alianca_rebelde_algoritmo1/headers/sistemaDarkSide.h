@@ -17,8 +17,6 @@ class SistemaDarkSide{
         void Ordena();        
         void RecursivoDistancia(int esq, int dir);
         void ParticaoDistancia(int esq, int dir, int *i,int *j);
-        void RecursivoPopulacao(int esq, int dir);
-        void ParticaoPopulacao(int esq, int dir, int *i,int *j);
 };
 
 #endif
