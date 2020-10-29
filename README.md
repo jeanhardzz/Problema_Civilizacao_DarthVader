@@ -51,12 +51,7 @@ foi utilizada a estrutura <vector>, sua escolha foi dada pela facilidade de
 implementação e diminuição de possíveis erros de memória. A classe Civilizacao
 possui os métodos: AdicionaCivilizacao(planeta, distancia, população) que
 recebe os atributos de uma civilização, cria o objeto civilização e o adiciona na
-lista de civilizações para posterior ordenação. O método ImprimeCivilizacoes()
-
-¹https://www.geeksforgeeks.org/measure-execution-time-with-high-precision-in-c-c/
-²https://www.canva.com/pt_br/graficos/grafico-barras/
-
-faz a impressão de todos as civilizações adicionadas na lista. E por fim o método Ordena(), que é o método que de fato diferencia cada sistema, nele é implementado o método de ordenação escolhido para aquele sistema. Dependendo do método de ordenação envolvido, há métodos auxiliares, como por exemplo, para src_ordenacao_alianca_rebelde_algoritmo2, que utiliza o método Heapsort, há os métodos auxiliares Constroi() e Refaz(esq,dir).
+lista de civilizações para posterior ordenação. O método ImprimeCivilizacoes() faz a impressão de todos as civilizações adicionadas na lista. E por fim o método Ordena(), que é o método que de fato diferencia cada sistema, nele é implementado o método de ordenação escolhido para aquele sistema. Dependendo do método de ordenação envolvido, há métodos auxiliares, como por exemplo, para src_ordenacao_alianca_rebelde_algoritmo2, que utiliza o método Heapsort, há os métodos auxiliares Constroi() e Refaz(esq,dir).
 Observação: Foi desenvolvido no main.cpp uma forma de escrever os tempos de ordenação de cada um dos testes em um arquivo chamado tempo.txt. A cada execução o main.cpp adiciona um novo tempo nesse arquivo.
 
 ## 3. Análise de Complexidade
@@ -82,12 +77,7 @@ Agora devemos analisar o custo de ordenação de cada um dos sistemas:
     o Comparações: O(n logn)
 
 ## 3.2 Espaço
-Em todos os sistemas a forma de guardar essas civilizações é a mesma, uma lista dinâmica (<vector>). Ou seja, uma vez que não há a criação de estruturas
-
-¹https://www.geeksforgeeks.org/measure-execution-time-with-high-precision-in-c-c/
-²https://www.canva.com/pt_br/graficos/grafico-barras/
-
-auxiliares para fazer alterações nos vetores em nenhum dos métodos de ordenação utilizados, temos que o custo de espaço é o mesmo para todos.
+Em todos os sistemas a forma de guardar essas civilizações é a mesma, uma lista dinâmica (<vector>). Ou seja, uma vez que não há a criação de estruturas auxiliares para fazer alterações nos vetores em nenhum dos métodos de ordenação utilizados, temos que o custo de espaço é o mesmo para todos.
 Vamos considerar, para nossa análise, que cada civilização ocupe uma unidade de espaço Dessa forma, temos que o custo de espaço depende apenas da quantidade de civilizações, ou seja, O(n).
 
 ## 4 Análise Experimental
@@ -96,45 +86,32 @@ Número do teste Número de civilizações Teste 0 50 Teste 1 100 Teste 2 500 Te
 
 ## 4.1 Análise src_ordenacao_imperador_algoritmo1:
 Número do teste Tempo Teste 0 0,000 segundos Teste 1 0,000 segundos Teste 2 0,002 segundos Teste 3 0,009 segundos Teste 4 0,907 segundos Teste 5 91,56 segundos Teste 6 570,76 segundos Teste 7 2385,2 segundos
-¹https://www.geeksforgeeks.org/measure-execution-time-with-high-precision-in-c-c/
-²https://www.canva.com/pt_br/graficos/grafico-barras/
 Teste 8 9699,5 segundos Teste 9 35572.553 segundos
 Tempo de ordenação máximo (2000000 civilizações): 35572.553 segundos ou 9 horas e 52 minutos.
 No gráfico podemos verificar com mais facilidade a sua complexidade assintótica O(n²).
 
 ## 4.2 Análise src_ordenacao_imperador_algoritmo2:
 Número do teste Tempo Teste 0 0.000 segundos Teste 1 0.000 segundos Teste 2 0.001 segundos Teste 3 0.003 segundos Teste 4 0.308 segundos Teste 5 32.1 segundos Teste 6 196.1 segundos
-¹https://www.geeksforgeeks.org/measure-execution-time-with-high-precision-in-c-c/
-²https://www.canva.com/pt_br/graficos/grafico-barras/
 Teste 7 790.6 segundos Teste 8 3125.2 segundos Teste 9 12208.8 segundos
 Tempo de ordenação máximo (2000000 civilizações): 12208,8 segundos ou 3 horas e 23 minutos.
 Por mais que os testes mostrem que este método (Inserção) é mais rápido que o método anterior (Seleção), à medida que os testes se tornam assintóticos, o Imperador 2 se torna tão custoso em termos de tempo quanto o Imperador 1.
 
 ## 4.3 Análise src_ordenacao_alianca_rebelde_algoritmo1:
 Número do teste Tempo Teste 0 0.000000 segundos Teste 1 0.000000 segundos Teste 2 0.000000 segundos Teste 3 0.000000 segundos
-
-¹https://www.geeksforgeeks.org/measure-execution-time-with-high-precision-in-c-c/
-²https://www.canva.com/pt_br/graficos/grafico-barras/
-
 Teste 4 0.000000 segundos Teste 5 0.051000 segundos Teste 6 0.126000 segundos Teste 7 0.255000 segundos Teste 8 0.605000 segundos Teste 9 1.149000 segundos
 Tempo de ordenação máximo (2000000 civilizações): 1.149 segundos.
 Neste método observamos uma diferença enorme em relação aos métodos anteriores. Sem dúvida é um método eficiente. Dessa forma, fica evidente o ganho que a sua complexidade O(n logn) traz em relação aos métodos com complexidade O(n²). E fica evidenciado que, por mais que o Quicksort tenha um pior caso O(n²), ele realmente tem uma chance muito baixa que acontecer.
 
 ## 4.4 Análise src_ordenacao_alianca_rebelde_algoritmo2:
 Número do teste Tempo Teste 0 0.000000 segundos
-¹https://www.geeksforgeeks.org/measure-execution-time-with-high-precision-in-c-c/
-²https://www.canva.com/pt_br/graficos/grafico-barras/
 Teste 1 0.000000 segundos Teste 2 0.000000 segundos Teste 3 0.001000 segundos Teste 4 0.005000 segundos Teste 5 0.080000 segundos Teste 6 0.201000 segundos Teste 7 0.502000 segundos Teste 8 1.211000 segundos Teste 9 2.476000 segundos
 Tempo de ordenação máximo (2000000 civilizações): 2.476 segundos.
 Neste método observamos uma diferença enorme em relação aos métodos simples (Seleção e Inserção). Sem dúvida é um método eficiente. No entanto, em relação ao Quicksort seu desempenho é um pouco inferior.
-¹https://www.geeksforgeeks.org/measure-execution-time-with-high-precision-in-c-c/
-²https://www.canva.com/pt_br/graficos/grafico-barras/
 
 ## 4.5 Comparativo
 É notável pelo gráfico que os métodos simples crescem tão rápido que a visualização dos métodos eficientes fica muito difícil. O método Heapsort fica tão semelhante ao Quicksort que sua visualização é impossível. Dessa forma, esse tipo de gráfico nos da uma ideia ainda melhor de qual métodos devemos escolher para a aliança rebelde e para o Imperador.
 Imagem ampliada da relação entre Quicksort e Heapsort.
-¹https://www.geeksforgeeks.org/measure-execution-time-with-high-precision-in-c-c/
-²https://www.canva.com/pt_br/graficos/grafico-barras/
+
 
 ## 5. Conclusão
 Após a leitura do problema proposto, nota-se que, os 4 sistemas propostos são quase iguais, se diferenciando apenas pela função ordenação. O grande esforço do problema proposto está, sobretudo, na implementação dos códigos de ordenação. Uma vez que alterações devem ser feitas para que o método de ordenação leve em conta o caso em que as distâncias se equivalem. Muitos erros lógicos podem aparecer durante essa implementação.
@@ -161,6 +138,5 @@ Observação2: Os arquivos de testes não estão sendo enviados por causa da qua
 
 ## References
 Chaimowicz, Luiz e Prates, Raquel. Slide sobre Seleção, Inserção, Quicksort e Heapsort (2020). Disciplina Estrutura de Dados DCC205 UFMG.
-¹https://www.geeksforgeeks.org/measure-execution-time-with-high-precision-in-c-c/
-²https://www.canva.com/pt_br/graficos/grafico-barras/
+
 Post sobre como adicionar informações em um .txt. Disponível em <https://pt.stackoverflow.com/questions/33032/quero-gravar-as-informa%C3%A7%C3%B5es-em-um-txt-em-c> Publicado em 18/09/2014. Acessado em 08/10/2020.
