@@ -1,6 +1,3 @@
-# Problema_Civilizacao_DarthVader
-Trabalho Prático 2 da disciplina DCC-205 UFMG
-
 # Trabalho Prático 2
 ## A ordenação estratégia de dominação do Imperador
 ### Jean Lucas Almeida Mota
